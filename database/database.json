@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "title": "Teste",
+        "local": "Algum Lugar",
+        "datetime": "Algum momento2",
+        "players": [
+            {
+                "id": 0,
+                "name": "JoseNeto",
+                "phone": "11111111",
+                "presence": true
+            }
+        ]
+    }
+]
