@@ -1,4 +1,5 @@
 import { readDB, writeDB } from "../database/index.js";
+import { nextID } from "../utils/index.js";
 
 export async function createEvent(req, res) {
     try {
@@ -8,9 +9,11 @@ export async function createEvent(req, res) {
             content = data
         })
         content.push({
+            id: nextID(content),
             title,
             local,
-            datetime
+            datetime,
+            players: []
         })
         await writeDB(content)
 

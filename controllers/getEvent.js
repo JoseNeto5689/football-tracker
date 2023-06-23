@@ -1,12 +1,17 @@
 import { readDB } from "../database/index.js";
 
-export async function listEvents(req, res) {
+export async function getEvent(req, res) {
+    const { id } = req.params
     try {
         let content
         await readDB().then((data) => {
             content = data
         })
-        res.json(content)
+        content.forEach(item => {
+            if (item.id == id) {
+                return res.json(item)
+            }
+        });
     }
     catch (e) {
         console.log(e)
