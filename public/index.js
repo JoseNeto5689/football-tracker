@@ -18,6 +18,7 @@ function reloadTable() {
                 const local = document.createElement("td")
                 const datetime = document.createElement("td")
                 const players = document.createElement("td")
+                const actions = document.createElement("td")
 
                 title.innerText = item.title
 
@@ -25,18 +26,31 @@ function reloadTable() {
 
                 datetime.innerText = item.datetime
 
-                const button = document.createElement("button")
-                button.innerText = "Lista de presença"
-                button.addEventListener("click", () => {
+                const showPLayers = document.createElement("button")
+                showPLayers.innerText = "Lista de presença"
+                showPLayers.addEventListener("click", () => {
 
                 })
+                players.appendChild(showPLayers)
 
-                players.appendChild(button)
+                const deleteBT = document.createElement("button")
+                deleteBT.innerText = "Remover"
+                deleteBT.addEventListener("click", () => {
+                    fetch(`/event/${item.id}`, {
+                        method: "delete"
+                    })
+                        .then(() => {
+                            reloadTable()
+                        })
+                })
+                actions.appendChild(deleteBT)
+
 
                 tr.appendChild(title)
                 tr.appendChild(local)
                 tr.appendChild(datetime)
                 tr.appendChild(players)
+                tr.appendChild(actions)
 
                 table.appendChild(tr)
 
@@ -62,8 +76,9 @@ function makeEvent(e) {
             },
             body: JSON.stringify(event)
         })
-            .then((res) => res.json())
-            .then((res) => { console.log(res) })
+            .then(() => {
+                reloadTable()
+            })
 
 
     }

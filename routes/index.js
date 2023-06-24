@@ -17,6 +17,7 @@ router.get("/event/:id", getEvent)
 
 router.delete("/event/:eventID/:playerID", removePlayer)
 router.delete("/event/:id", removeEvent)
+
 router.patch("/event/:eventID/:playerID", updatePlayer)
 
 export default router;
