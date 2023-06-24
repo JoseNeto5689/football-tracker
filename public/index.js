@@ -29,7 +29,7 @@ function reloadTable() {
                 const showPLayers = document.createElement("button")
                 showPLayers.innerText = "Lista de presença"
                 showPLayers.addEventListener("click", () => {
-
+                    window.location.replace(`${window.location.href}match.html?id=${item.id}`)
                 })
                 players.appendChild(showPLayers)
 
@@ -51,7 +51,6 @@ function reloadTable() {
                 tr.appendChild(datetime)
                 tr.appendChild(players)
                 tr.appendChild(actions)
-
                 table.appendChild(tr)
 
             })
