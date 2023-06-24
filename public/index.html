@@ -5,10 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FootBall Tracker</title>
+    <script src="index.js"></script>
 </head>
 
 <body>
-
+    <form action="/event" method="post">
+        <label for="event_title">Nome do evento: </label>
+        <input type="text" id="event_title" required>
+        <label for="event_time">Data e hora: </label>
+        <input type="datetime-local" id="event_time" required>
+        <label for="event_local">Local: </label>
+        <input type="text" id="event_local" required>
+        <button type="submit" id="add_event">Novo Evento</button>
+    </form>
 </body>
 
 </html>

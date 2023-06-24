@@ -1,16 +1,1 @@
-[
-    {
-        "id": 0,
-        "title": "Teste",
-        "local": "Algum Lugar",
-        "datetime": "Algum momento2",
-        "players": [
-            {
-                "id": 0,
-                "name": "JoseNeto",
-                "phone": "11111111",
-                "presence": true
-            }
-        ]
-    }
-]
+[{"id":1,"title":"Fut","local":"Aqui","datetime":"2023-06-24T09:42","players":[]},{"id":0,"title":"Fut","local":"Aqui ","datetime":"2023-06-24T09:43","players":[]}]
