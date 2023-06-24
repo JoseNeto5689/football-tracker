@@ -26,7 +26,7 @@ export async function addPlayer(req, res) {
         res.json({ status: "success" })
     }
     catch (e) {
-        console.log(e)
+        res.status(400).json({ status: "error", content: e })
     }
 
 }

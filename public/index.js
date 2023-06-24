@@ -40,8 +40,6 @@ function reloadTable() {
 
                 table.appendChild(tr)
 
-
-
             })
         })
 }
