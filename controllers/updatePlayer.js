@@ -4,11 +4,15 @@ export async function updatePlayer(req, res) {
     try {
         const { name, phone, presence } = req.body
         const { eventID, playerID } = req.params
-        let content;
+
+        let content
+
         await readDB().then((data) => {
             content = data
         })
+
         let newContent = []
+
         content.forEach((item) => {
             if (eventID == item.id) {
                 let newPlayers = []
@@ -28,12 +32,13 @@ export async function updatePlayer(req, res) {
             }
             newContent.push(item)
         })
+
         await writeDB(newContent)
 
         res.json({ status: "success" })
     }
     catch (e) {
-        console.log(e)
+        res.status(400).json({ status: "error", content: e })
     }
 
 }
