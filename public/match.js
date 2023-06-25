@@ -1,7 +1,36 @@
 window.addEventListener("load", () => {
+    document.querySelector("button#new_player").addEventListener("click", addPlayer)
     fillPlayerTable()
 })
 
+
+function addPlayer(e) {
+    const params = getParameters()
+    const player = {
+        name: document.querySelector("input#player_name").value,
+        phone: document.querySelector("input#player_phone").value
+    }
+
+    if (player.name == "" || player.phone == "") {
+        return
+    }
+    e.preventDefault()
+    try {
+        fetch(`/player/${params.id}`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(player)
+        })
+            .then(() => {
+                fillPlayerTable()
+            })
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
 
 function fillPlayerTable() {
     const params = getParameters()
