@@ -1,8 +1,15 @@
 window.addEventListener("load", () => {
     document.querySelector("button#add_event").addEventListener("click", makeEvent)
+    document.querySelector("button#new").addEventListener("click", showModal)
+    document.querySelector("button#cancel").addEventListener("click", () => {
+        document.querySelector("div.modal").style.display = "none"
+    })
     reloadTable()
 })
 
+function showModal() {
+    document.querySelector("div.modal").style.display = "flex"
+}
 
 
 function reloadTable() {
@@ -29,7 +36,7 @@ function reloadTable() {
                 const showPLayers = document.createElement("button")
                 showPLayers.innerText = "Lista de presença"
                 showPLayers.addEventListener("click", () => {
-                    window.location.replace(`${window.location.href}match.html?id=${item.id}`)
+                    window.location.replace(`/match.html?id=${item.id}`)
                 })
                 players.appendChild(showPLayers)
 
@@ -66,7 +73,13 @@ function makeEvent(e) {
     if (event.title == "" || event.datetime == "" || event.local == "") {
         return
     }
+
     e.preventDefault()
+
+    document.querySelector("#event_title").value = ""
+    document.querySelector("#event_time").value = ""
+    document.querySelector("#event_local").value = ""
+
     try {
         fetch("/event", {
             method: "POST",
@@ -77,6 +90,7 @@ function makeEvent(e) {
         })
             .then(() => {
                 reloadTable()
+                document.querySelector("div.modal").style.display = "none"
             })
 
 

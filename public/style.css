@@ -1,0 +1,132 @@
+body {
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+div#table_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button#new {
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    width: 10%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-top: 1vw;
+}
+
+button#back_events {
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    width: 10%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+div.modal {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+div.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+div.modal #form_container {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1vw 2vh 1vw;
+    border-radius: 10px;
+}
+
+input {
+    padding: 0;
+    border-radius: 5px;
+    width: 15vw;
+    height: 1.5em;
+    min-width: 300px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    text-indent: 0.5em;
+}
+
+input[type="datetime-local"] {
+    text-align: center;
+}
+
+div.modal form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.modal form div label {
+    margin-right: 1vw;
+    font-weight: bold;
+}
+
+div.modal form button {
+    background-color: green;
+    color: white;
+    font-weight: bolder;
+    width: 40%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+div.modal form button#cancel {
+    background-color: red;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid black;
+    text-align: center;
+    width: 30vh;
+}
+
+th,
+thead td {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+.events {
+    margin-top: 1vw;
+}

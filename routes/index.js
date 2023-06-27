@@ -11,7 +11,7 @@ import { getPlayers } from "../controllers/getPlayers.js";
 const router = Router()
 
 router.post("/event", createEvent)
-router.post("/event/:id", addPlayer)
+router.post("/player/:id", addPlayer)
 
 router.get("/event", listEvents)
 router.get("/event/:id", getEvent)
