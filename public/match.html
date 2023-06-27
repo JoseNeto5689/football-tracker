@@ -6,42 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matchs</title>
     <script src="match.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form>
-        <label for="player_name">Nome: </label>
-        <input type="text" id="player_name" required>
-        <label for="player_phone">Telefone: </label>
-        <input type="tel" id="player_phone" required>
-        <button type="submit" id="new_player">Adicionar</button>
-    </form>
+    <div class="modal">
+        <div id="form_container">
+            <h2>Preencha os campos abaixo</h2>
+            <form>
+                <div>
+                    <label for="player_name">Nome: </label>
+                    <input type="text" id="player_name" required>
+                </div>
+                <div>
+                    <label for="player_phone">Telefone: </label>
+                    <input type="tel" id="player_phone" required>
+                </div>
+                <div>
+                    <button type="reset" id="cancel">Cancelar</button>
+                    <button type="submit" id="new_player">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-
-    <table>
-        <thead>
-            <tr>
-                <th colspan="4">Lista de Jogadores</th>
-            </tr>
-            <tr id="title">
-                <td>
-                    Nome
-                </td>
-                <td>
-                    Telefone
-                </td>
-                <td>
-                    Vai jogar?
-                </td>
-                <td>
-                    Ações
-                </td>
-            </tr>
-        </thead>
-        <tbody id="players">
-
-        </tbody>
-    </table>
+    <button id="back_events"> <- Voltar a lista de eventos</button>
+            <div id="table_container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="4">Lista de Jogadores</th>
+                        </tr>
+                        <tr id="title">
+                            <td>
+                                Nome
+                            </td>
+                            <td>
+                                Telefone
+                            </td>
+                            <td>
+                                Vai jogar?
+                            </td>
+                            <td>
+                                Ações
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody id="players">
+                    </tbody>
+                </table>
+                <button id="new">Novo jogador</button>
+            </div>
 </body>
 
 </html>

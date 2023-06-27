@@ -6,46 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FootBall Tracker</title>
     <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form action="/event" method="post">
-        <label for="event_title">Nome do evento: </label>
-        <input type="text" id="event_title" required>
-        <label for="event_time">Data e hora: </label>
-        <input type="datetime-local" id="event_time" required>
-        <label for="event_local">Local: </label>
-        <input type="text" id="event_local" required>
-        <button type="submit" id="add_event">Novo Evento</button>
-    </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th colspan="5">Eventos</th>
-            </tr>
-            <tr id="title">
-                <td>
-                    Titulo
-                </td>
-                <td>
-                    Local
-                </td>
-                <td>
-                    Data e Horário
-                </td>
-                <td>
-                    Lista de Presença
-                </td>
-                <td>
-                    Ações
-                </td>
-            </tr>
-        </thead>
-        <tbody id="events">
+    <div class="modal">
+        <div id="form_container">
+            <h2>Crie um novo evento abaixo:</h2>
+            <form>
+                <div>
+                    <label for="event_title">Evento: </label>
+                    <input type="text" id="event_title" placeholder="Nome do evento" required>
+                </div>
+                <div>
+                    <label for="event_time">Data e hora: </label>
+                    <input type="datetime-local" id="event_time" required>
+                </div>
+                <div>
+                    <label for="event_local">Local: </label>
+                    <input type="text" id="event_local" placeholder="Local do evento" required>
+                </div>
+                <div>
+                    <button type="reset" id="cancel">Cancelar</button>
+                    <button type="submit" id="add_event">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        </tbody>
-    </table>
+    <div id="table_container" class="events">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="5">Eventos</th>
+                </tr>
+                <tr id="title">
+                    <td>
+                        Titulo
+                    </td>
+                    <td>
+                        Local
+                    </td>
+                    <td>
+                        Data e Horário
+                    </td>
+                    <td>
+                        Lista de Presença
+                    </td>
+                    <td>
+                        Ações
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="events">
+            </tbody>
+        </table>
+        <button id="new">Novo Evento</button>
+    </div>
 </body>
 
 </html>

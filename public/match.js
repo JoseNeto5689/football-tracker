@@ -1,8 +1,18 @@
 window.addEventListener("load", () => {
     document.querySelector("button#new_player").addEventListener("click", addPlayer)
+    document.querySelector("button#new").addEventListener("click", showModal)
+    document.querySelector("button#back_events").addEventListener("click", () => {
+        window.location.replace("/")
+    })
+    document.querySelector("button#cancel").addEventListener("click", () => {
+        document.querySelector("div.modal").style.display = "none"
+    })
     fillPlayerTable()
 })
 
+function showModal() {
+    document.querySelector("div.modal").style.display = "flex"
+}
 
 function addPlayer(e) {
     const params = getParameters()
@@ -25,6 +35,7 @@ function addPlayer(e) {
         })
             .then(() => {
                 fillPlayerTable()
+                document.querySelector("div.modal").style.display = "none"
             })
     }
     catch (e) {
